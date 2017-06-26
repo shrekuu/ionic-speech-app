@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>
+      测试 ionic 语音识别
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button (click)="isSpeechSupported()">支持语音嘛?</button>
+  <button ion-button (click)="getPermission()">获取权限</button>
+  <button ion-button (click)="hasPermission()">有权限了嘛?</button>
+  <button ion-button (click)="getSupportedLanguages()">看看支持的语言</button>
+
+  <hr>
+
+  <button ion-button [disabled]="isListening" (click)="startListening()" icon-left>
+    <ion-icon name="mic"></ion-icon>
+    语音转文本开始
+  </button>
+  <button ion-button [disabled]="!isListening" (click)="stopListening()" icon-left>
+    <ion-icon name="mic-off"></ion-icon>
+    语音转文本结束
+  </button>
+
+  <hr>
+
+  <button ion-button color="danger" (click)="clearText()">
+    清空文本框
+  </button>
+
+  <ion-item>
+    <ion-textarea placeholder="转换后的文本"></ion-textarea>
+  </ion-item>
+
+</ion-content>
